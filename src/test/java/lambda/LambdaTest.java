@@ -12,7 +12,6 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class LambdaTest {
-
     private final String BASE_URL = "https://github.com";
     private final static String REPOSITORY = "JMadam/qa_5_5";
 
@@ -23,14 +22,11 @@ public class LambdaTest {
     @DisplayName("Lambda test.Menu 'Issue' in repository")
     @Severity(SeverityLevel.BLOCKER)
     @Link(name = "BaseURL", url = "https://github.com")
-
-
     public void searchForIssue() {
         step("Open Main Page", (step) -> {
             step.parameter("url", BASE_URL);
             open(BASE_URL);
         });
-
         step("Search Repository", (step) -> {
             step.parameter("repository", REPOSITORY);
             $(".header-search-input").click();
@@ -38,9 +34,7 @@ public class LambdaTest {
             $(".header-search-input").submit();
         });
         step("Go to Repository", () -> $(By.linkText(REPOSITORY)).click());
-
         step("Click on Issue Tab", () -> $(withText("Issues")).click());
-
         step("Check text welcome", (step) -> {
             step.parameter("Expected result", "Welcome to issues!");
 

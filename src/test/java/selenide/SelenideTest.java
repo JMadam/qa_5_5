@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class SelenideTest {
-
     private final String BASE_URL = "https://github.com";
     private final static String REPOSITORY = "JMadam/qa_5_5";
 
@@ -24,7 +23,6 @@ public class SelenideTest {
     @DisplayName("SelenideTest. Menu 'Issue' in repository")
     @Severity(SeverityLevel.BLOCKER)
     @Link(name = "BaseURL", url = "https://github.com")
-
     public void testIssueSearch() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         open(BASE_URL);

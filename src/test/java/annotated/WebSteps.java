@@ -11,15 +11,12 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class WebSteps {
     private final String BASE_URL = "https://github.com";
-
-
     @Step("Open Main Page")
     public void openMainPage() {
         open(BASE_URL);
     }
 
     @Step ("Search Repository {repository}")
-
     public void searchForRepository(String repository) {
         $(".header-search-input").click();
         $(".header-search-input").sendKeys(repository);
@@ -35,7 +32,6 @@ public class WebSteps {
     public void clickOnIssueTab() {
         $(withText("Issues")).click();
     }
-
 
     @Step("Check text welcome")
     public void shouldSeeIssueWithWelcome() {
