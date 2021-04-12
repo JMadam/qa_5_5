@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class AnnotatedTest {
     private final static String REPOSITORY = "JMadam/qa_5_5";
-    private WebSteps steps = new WebSteps();
+    private final WebSteps steps = new WebSteps();
     @Test
     @Owner("JMadam")
     @Feature("Main menu")
